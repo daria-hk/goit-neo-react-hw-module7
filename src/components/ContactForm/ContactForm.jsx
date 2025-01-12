@@ -3,7 +3,6 @@ import { useId } from "react";
 import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactsOps";
-import { nanoid } from "nanoid";
 import * as Yup from "yup";
 
 const ContactForm = () => {
@@ -30,7 +29,6 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const newContact = {
-      id: nanoid(),
       name: values.name,
       number: values.number,
     };
@@ -60,7 +58,7 @@ const ContactForm = () => {
           className={css.field}
           type="tel"
           name="number"
-          placeholder="111-22-33"
+          placeholder="888-222-5777"
         />
         <ErrorMessage name="number" component="span" className={css.error} />
         <button className={css.btn} type="submit">
